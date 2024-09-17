@@ -18,3 +18,5 @@ else
 fi
 
 sudo yum -y install ansible
+
+ansible --version
