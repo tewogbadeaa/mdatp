@@ -17,4 +17,4 @@ else
   exit 1
 fi
 
-sudo yum -y install ansible git
+sudo yum -y install ansible
