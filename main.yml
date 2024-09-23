@@ -71,9 +71,16 @@
         path: /etc/opt/microsoft/mdatp/mdatp_onboard.json
       register: mdatp_onboard
 
+    - name: Clone the repository into the user's home directory
+      git:
+        repo: 'https://github.com/tewogbadeaa/adt.git'
+        dest: '/adt'
+        update: yes
+        version: main
+
     - name: Extract WindowsDefenderATPOnboardingPackage.zip into /etc/opt/microsoft/mdatp
       unarchive:
-        src: '/mdatp/WindowsDefenderATPOnboardingPackage.zip'
+        src: '/adt/WindowsDefenderATPOnboardingPackage.zip'
         dest: '/etc/opt/microsoft/mdatp'
         owner: '{{ ansible_user }}'
         group: '{{ ansible_user }}'
